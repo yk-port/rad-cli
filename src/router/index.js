@@ -8,10 +8,26 @@ import MyPage from '@/views/mypage.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: Top },
-  { path: '/login', component: Login },
-  { path: '/signup', component: SignUp },
-  { path: '/mypage', component: MyPage },
+  {
+    path: '/',
+    name: 'top',
+    component: Top,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: SignUp,
+  },
+  {
+    path: '/mypage',
+    name: 'mypage',
+    component: MyPage,
+  },
 ]
 
 const router = new VueRouter({
