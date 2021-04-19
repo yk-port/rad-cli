@@ -41,6 +41,10 @@ const routes = [
     props: true,
     component: PostsDetail,
   },
+  {
+    path: '*',
+    redirect: { name: 'top' },
+  },
 ]
 
 const router = new VueRouter({
