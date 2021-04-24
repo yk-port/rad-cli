@@ -4,6 +4,7 @@ import Top from '@/views/Top.vue'
 import Login from '@/views/Login.vue'
 import SignUp from '@/views/SignUp.vue'
 import MyPage from '@/views/MyPage.vue'
+import Search from '@/views/Search.vue'
 import Posts from '@/views/posts/Index.vue'
 import PostsDetail from '@/views/posts/Detail.vue'
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/mypage',
     name: 'mypage',
     component: MyPage,
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search,
   },
   {
     path: '/posts',

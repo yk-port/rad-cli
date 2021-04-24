@@ -22,7 +22,5 @@
 </template>
 
 <script>
-export default {
-  name: 'Top',
-}
+export default {}
 </script>

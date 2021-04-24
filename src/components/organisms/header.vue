@@ -5,7 +5,7 @@
     </router-link>
     <v-spacer></v-spacer>
     <v-btn class="mx-2">
-      <v-icon>mdi-magnify</v-icon>
+      <v-icon @click="$router.push({ path: 'search' })">mdi-magnify</v-icon>
     </v-btn>
     <v-btn
       class="mx-2 red--text text--accent-2"
