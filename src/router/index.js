@@ -5,7 +5,7 @@ import Login from '@/views/login.vue'
 import SignUp from '@/views/signUp.vue'
 import MyPage from '@/views/myPage.vue'
 import Search from '@/views/search.vue'
-import CategoryIndex from '@/views/category/categoryIndex.vue'
+import Category from '@/views/category.vue'
 import Posts from '@/views/posts/index.vue'
 import Post from '@/views/post.vue'
 
@@ -39,9 +39,9 @@ const routes = [
   },
   {
     path: '/category/:category',
-    name: 'category-index',
+    name: 'category',
     props: true,
-    component: CategoryIndex,
+    component: Category,
   },
   {
     path: '/posts',
