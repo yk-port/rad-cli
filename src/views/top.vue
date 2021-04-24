@@ -4,7 +4,7 @@
       <v-img
         :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
         :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-        @click="$router.push({ name: 'posts-detail', params: { id: n } })"
+        @click="$router.push({ name: 'post', params: { id: n } })"
         aspect-ratio="1.7778"
         class="grey lighten-2"
       >

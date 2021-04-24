@@ -16,7 +16,14 @@
       <v-row>
         <v-col v-for="n in 10" :key="n" cols="6">
           <v-card class="mx-auto" max-width="360">
-            <v-card-action @click="$router.push({ name: 'posts' })">
+            <v-card-action
+              @click="
+                $router.push({
+                  name: 'post',
+                  params: { id: n },
+                })
+              "
+            >
               <v-img
                 src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
                 :aspect-ratio="16 / 9"

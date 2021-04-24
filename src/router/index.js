@@ -7,7 +7,7 @@ import MyPage from '@/views/myPage.vue'
 import Search from '@/views/search.vue'
 import CategoryIndex from '@/views/category/categoryIndex.vue'
 import Posts from '@/views/posts/index.vue'
-import PostsDetail from '@/views/posts/detail.vue'
+import Post from '@/views/post.vue'
 
 Vue.use(VueRouter)
 
@@ -49,10 +49,10 @@ const routes = [
     component: Posts,
   },
   {
-    path: '/posts/:id',
-    name: 'posts-detail',
+    path: '/:id',
+    name: 'post',
     props: true,
-    component: PostsDetail,
+    component: Post,
   },
   {
     path: '*',
