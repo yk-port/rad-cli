@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Top from '@/views/Top.vue'
-import Login from '@/views/Login.vue'
-import SignUp from '@/views/SignUp.vue'
-import MyPage from '@/views/MyPage.vue'
-import Posts from '@/views/posts/Index.vue'
-import PostsDetail from '@/views/posts/Detail.vue'
+import Top from '@/views/top.vue'
+import Login from '@/views/login.vue'
+import SignUp from '@/views/signUp.vue'
+import MyPage from '@/views/myPage.vue'
+import Search from '@/views/search.vue'
+import CategoryIndex from '@/views/category/categoryIndex.vue'
+import Posts from '@/views/posts/index.vue'
+import Post from '@/views/post.vue'
 
 Vue.use(VueRouter)
 
@@ -31,15 +33,26 @@ const routes = [
     component: MyPage,
   },
   {
+    path: '/search',
+    name: 'search',
+    component: Search,
+  },
+  {
+    path: '/category/:category',
+    name: 'category-index',
+    props: true,
+    component: CategoryIndex,
+  },
+  {
     path: '/posts',
     name: 'posts',
     component: Posts,
   },
   {
-    path: '/posts/:id',
-    name: 'posts-detail',
+    path: '/:id',
+    name: 'post',
     props: true,
-    component: PostsDetail,
+    component: Post,
   },
   {
     path: '*',
