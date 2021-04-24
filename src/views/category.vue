@@ -15,25 +15,27 @@
     <v-container style="max-width: 780px">
       <v-row>
         <v-col v-for="n in 10" :key="n" cols="6">
-          <v-card class="mx-auto" max-width="360">
-            <v-card-action
-              @click="
-                $router.push({
-                  name: 'post',
-                  params: { id: n },
-                })
-              "
-            >
-              <v-img
-                src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                :aspect-ratio="16 / 9"
-              ></v-img>
-              <v-card-title> Top western road trips </v-card-title>
-              <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
-            </v-card-action>
+          <v-card
+            class="mx-auto"
+            max-width="360"
+            @click="
+              $router.push({
+                name: 'post',
+                params: { id: n },
+              })
+            "
+          >
+            <v-img
+              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+              :aspect-ratio="16 / 9"
+            ></v-img>
+            <v-card-title> Top western road trips </v-card-title>
+            <v-card-subtitle> 1,000 miles of wonder </v-card-subtitle>
           </v-card>
         </v-col>
       </v-row>
+
+      <h4 id="next">次へ</h4>
     </v-container>
   </v-container>
 </template>

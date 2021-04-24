@@ -13,8 +13,20 @@
     <h2 class="mb-4">ハッシュタグ</h2>
     <v-row class="mb-10">
       <div class="d-flex flex-wrap">
-        <v-chip v-for="n in 15" :key="n" outlined link class="ma-2">
-          #{{ n }}タグイベント
+        <v-chip
+          v-for="tag in tagItems"
+          :key="tag.id"
+          outlined
+          link
+          class="ma-2"
+          @click="
+            $router.push({
+              name: 'search',
+              query: { q: tag.label },
+            })
+          "
+        >
+          {{ tag.label }}
         </v-chip>
       </div>
     </v-row>
@@ -23,21 +35,20 @@
     <v-row class="mb-10">
       <v-col v-for="n in 10" :key="n" cols="6" sm="4" md="3" lg="2">
         <v-card height="135">
-          <v-card-action>
-            <v-btn
-              text
-              block
-              height="100%"
-              @click="
-                $router.push({
-                  name: 'category-index',
-                  params: { category: n },
-                })
-              "
-            >
-              #{{ n }}カテゴリー
-            </v-btn>
-          </v-card-action>
+          <v-btn
+            text
+            block
+            height="100%"
+            @click="
+              $router.push({
+                name: 'category',
+                params: { category: n },
+                hash: '#next',
+              })
+            "
+          >
+            #{{ n }}カテゴリー
+          </v-btn>
         </v-card>
       </v-col>
     </v-row>
@@ -48,7 +59,14 @@
 </template>
 
 <script>
-export default {}
+import tagItems from '@/utils/tags.js'
+export default {
+  data() {
+    return {
+      tagItems,
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>
