@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Top from '@/views/Top.vue'
-import Login from '@/views/Login.vue'
-import SignUp from '@/views/SignUp.vue'
-import MyPage from '@/views/MyPage.vue'
-import Search from '@/views/Search.vue'
-import Posts from '@/views/posts/Index.vue'
-import PostsDetail from '@/views/posts/Detail.vue'
+import Top from '@/views/top.vue'
+import Login from '@/views/login.vue'
+import SignUp from '@/views/signUp.vue'
+import MyPage from '@/views/myPage.vue'
+import Search from '@/views/search.vue'
+import Posts from '@/views/posts/index.vue'
+import PostsDetail from '@/views/posts/detail.vue'
 
 Vue.use(VueRouter)
 
