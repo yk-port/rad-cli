@@ -7,10 +7,16 @@
         label="Email"
         placeholder="yokokura.tatsuya@gmail.com"
         type="email"
+        v-model="email"
         outlined
       ></v-text-field>
-      <v-text-field label="Password" type="password" outlined></v-text-field>
-      <v-btn color="red accent-2" block large>登録</v-btn>
+      <v-text-field
+        label="Password"
+        type="password"
+        outlined
+        v-model="password"
+      ></v-text-field>
+      <v-btn color="red accent-2" block large @click="signin()">登録</v-btn>
     </template>
 
     <template v-slot:link>
@@ -26,14 +32,30 @@
 
 <script>
 import AccountForm from '@/components/layouts/AccountForm.vue'
+import axios from '@/api/axios-auth.js'
 
 export default {
   components: {
     AccountForm,
   },
+
   data: () => ({
     email: '',
     password: '',
   }),
+
+  methods: {
+    signin() {
+      axios
+        .post('/accounts:signUp?key=AIzaSyAgAHss_S5xeI37DStGTysgzCXWGjoEtlc', {
+          email: this.email,
+          password: this.password,
+          returnSecureToken: true,
+        })
+        .then((response) => {
+          console.log(response)
+        })
+    },
+  },
 }
 </script>
