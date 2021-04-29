@@ -1,6 +1,6 @@
 <template>
   <AccountForm>
-    <template v-slot:title><h2 class="text-center">ログイン</h2></template>
+    <template v-slot:title><h2 class="text-center">新規登録</h2></template>
 
     <template v-slot:form>
       <v-text-field
@@ -10,23 +10,15 @@
         outlined
       ></v-text-field>
       <v-text-field label="Password" type="password" outlined></v-text-field>
-      <div class="caption text-right mb-8">
-        <router-link
-          :to="{ name: 'forget-password' }"
-          class="grey--text text--darken-1 text-center"
-        >
-          パスワードを忘れた
-        </router-link>
-      </div>
-      <v-btn color="red accent-2" block large>ログイン</v-btn>
+      <v-btn color="red accent-2" block large>登録</v-btn>
     </template>
 
     <template v-slot:link>
       <router-link
-        :to="{ name: 'register' }"
+        :to="{ name: 'login' }"
         class="grey--text text--darken-1 text-center"
       >
-        新規登録はこちら
+        ログインはこちら
       </router-link>
     </template>
   </AccountForm>

@@ -16,7 +16,7 @@
     <v-btn
       class="mx-2"
       color="red accent-2"
-      @click="$router.push({ name: 'signup' })"
+      @click="$router.push({ name: 'register' })"
       >新規登録</v-btn
     >
   </v-app-bar>

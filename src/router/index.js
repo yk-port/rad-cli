@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Top from '@/views/top.vue'
-import Login from '@/views/login.vue'
-import SignUp from '@/views/signUp.vue'
-import MyPage from '@/views/myPage.vue'
-import Search from '@/views/search.vue'
-import Category from '@/views/category.vue'
-import Posts from '@/views/posts/index.vue'
-import Post from '@/views/post.vue'
+import Top from '@/views/Top.vue'
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
+import MyPage from '@/views/MyPage.vue'
+import Search from '@/views/Search.vue'
+import Category from '@/views/Category.vue'
+import Posts from '@/views/posts/Index.vue'
+import Post from '@/views/Post.vue'
 
 Vue.use(VueRouter)
 
@@ -23,9 +23,9 @@ const routes = [
     component: Login,
   },
   {
-    path: '/signup',
-    name: 'signup',
-    component: SignUp,
+    path: '/register',
+    name: 'register',
+    component: Register,
   },
   {
     path: '/mypage',

@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <Header />
-
     <v-main class="blue-grey lighten-5">
       <router-view></router-view>
     </v-main>
@@ -9,10 +8,9 @@
 </template>
 
 <script>
-import Header from '@/components/organisms/header.vue'
-export default {
-  name: 'App',
+import Header from '@/components/organisms/Header.vue'
 
+export default {
   components: {
     Header,
   },
