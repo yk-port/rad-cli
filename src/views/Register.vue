@@ -16,7 +16,14 @@
         outlined
         v-model="password"
       ></v-text-field>
-      <v-btn color="red accent-2" block large @click="signin()">登録</v-btn>
+      <v-btn
+        color="red accent-2"
+        block
+        large
+        @click="signin()"
+        class="white--text font-weight-bold"
+        >登録</v-btn
+      >
     </template>
 
     <template v-slot:link>
@@ -32,7 +39,6 @@
 
 <script>
 import AccountForm from '@/components/layouts/AccountForm.vue'
-import axios from '@/api/axios-auth.js'
 
 export default {
   components: {
@@ -46,15 +52,12 @@ export default {
 
   methods: {
     signin() {
-      axios
-        .post('/accounts:signUp?key=AIzaSyAgAHss_S5xeI37DStGTysgzCXWGjoEtlc', {
-          email: this.email,
-          password: this.password,
-          returnSecureToken: true,
-        })
-        .then((response) => {
-          console.log(response)
-        })
+      this.$store.dispatch('signin', {
+        email: this.email,
+        password: this.password,
+      })
+      this.email = ''
+      this.password = ''
     },
   },
 }
