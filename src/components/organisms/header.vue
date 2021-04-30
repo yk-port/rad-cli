@@ -5,8 +5,13 @@
     </router-link>
     <v-spacer></v-spacer>
     <template v-if="isAuthenticated">
-      <v-btn class="mx-2">
+      <v-btn text>
         <v-icon @click="$router.push({ name: 'search' })">mdi-magnify</v-icon>
+      </v-btn>
+      <v-btn text>
+        <v-icon @click="$router.push({ name: 'mypage' })"
+          >mdi-account-circle</v-icon
+        >
       </v-btn>
       <v-btn
         class="mx-2"
@@ -16,7 +21,7 @@
       >
     </template>
     <template v-else>
-      <v-btn class="mx-2">
+      <v-btn class="mx-2" text>
         <v-icon @click="$router.push({ name: 'search' })">mdi-magnify</v-icon>
       </v-btn>
       <v-btn
