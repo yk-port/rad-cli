@@ -20,7 +20,7 @@
             max-width="360"
             @click="
               $router.push({
-                name: 'post',
+                name: 'posts-detail',
                 params: { id: n },
               })
             "

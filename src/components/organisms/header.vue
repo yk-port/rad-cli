@@ -4,27 +4,44 @@
       <h2>Rad Post</h2>
     </router-link>
     <v-spacer></v-spacer>
-    <v-btn class="mx-2">
-      <v-icon @click="$router.push({ name: 'search' })">mdi-magnify</v-icon>
-    </v-btn>
-    <v-btn
-      class="mx-2 red--text text--accent-2"
-      color="white"
-      @click="$router.push({ name: 'login' })"
-      >ログイン</v-btn
-    >
-    <v-btn
-      class="mx-2"
-      color="red accent-2"
-      @click="$router.push({ name: 'register' })"
-      >新規登録</v-btn
-    >
+    <template v-if="isAuthenticated">
+      <v-btn class="mx-2">
+        <v-icon @click="$router.push({ name: 'search' })">mdi-magnify</v-icon>
+      </v-btn>
+      <v-btn
+        class="mx-2"
+        color="red accent-2"
+        @click="$router.push({ name: 'posts-new' })"
+        >ポストする</v-btn
+      >
+    </template>
+    <template v-else>
+      <v-btn class="mx-2">
+        <v-icon @click="$router.push({ name: 'search' })">mdi-magnify</v-icon>
+      </v-btn>
+      <v-btn
+        class="mx-2 red--text text--accent-2"
+        color="white"
+        @click="$router.push({ name: 'login' })"
+        >ログイン</v-btn
+      >
+      <v-btn
+        class="mx-2"
+        color="red accent-2"
+        @click="$router.push({ name: 'register' })"
+        >新規登録</v-btn
+      >
+    </template>
   </v-app-bar>
 </template>
 
 <script>
 export default {
-  name: 'Header',
+  computed: {
+    isAuthenticated() {
+      return this.$store.getters.getIdToken !== null
+    },
+  },
 }
 </script>
 

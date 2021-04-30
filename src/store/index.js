@@ -6,7 +6,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    idToken: '',
+    idToken: null,
+  },
+
+  getters: {
+    getIdToken: (state) => state.idToken,
   },
 
   mutations: {
